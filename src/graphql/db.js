@@ -10,12 +10,18 @@ export const getMovies = async (limit, rating) => {
     data: {
       data: { movies }
     }
-  } = await axios.get(LIST_MOVIES_URL, {
-    params: {
-      limit,
-      minimum_rating: rating
+  } = await axios.get(
+    `https://cors-anywhere.herokuapp.com/${LIST_MOVIES_URL}`,
+    {
+      params: {
+        limit,
+        minimum_rating: rating
+      },
+      headers: {
+        Origin: "https://movieql2.now.sh"
+      }
     }
-  });
+  );
   return movies;
 };
 
