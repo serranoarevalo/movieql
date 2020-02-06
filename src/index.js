@@ -1,4 +1,4 @@
-import { GraphQLServer } from "graphql-yoga";
+import { GraphQLServer } from "graphql-yoga-dgt";
 import resolvers from "./graphql/resolvers";
 
 const server = new GraphQLServer({
@@ -11,7 +11,6 @@ const server = new GraphQLServer({
     medium_cover_image: String
     genres: [String]
   }
-  
   type Query {
     movies(limit: Int, rating: Float): [Movie]!
     movie(id: Int!): Movie
@@ -21,4 +20,4 @@ const server = new GraphQLServer({
   resolvers
 });
 
-server.start(() => console.log("Graphql Server Running"));
+module.exports = server.createExpressApplication();
