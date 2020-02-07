@@ -17,6 +17,7 @@ export const getMovies = async (limit, rating) => {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
+      "X-Forwarded-Proto": "https",
       Origin: "*"
     }
   });
