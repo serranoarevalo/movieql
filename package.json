@@ -18,6 +18,6 @@
     "start": "now dev"
   },
   "devDependencies": {
-    "now": "^17.0.1"
+    "now": "^17.0.2"
   }
 }

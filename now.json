@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "project": "movieql",
   "builds": [
     {
       "src": "/src/index.js",
