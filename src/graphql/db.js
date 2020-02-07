@@ -9,14 +9,15 @@ export const getMovies = async (limit, rating) => {
     data: {
       data: { movies }
     }
-  } = await axios.get(LIST_MOVIES_URL, {
+  } = await axios.get(`https://crossorigin.me/${LIST_MOVIES_URL}`, {
     params: {
       limit,
       minimum_rating: rating
     },
     headers: {
       Accept: "application/json",
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      Origin: "*"
     }
   });
   return movies;
