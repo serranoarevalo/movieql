@@ -5,23 +5,19 @@ const MOVIE_DETAILS_URL = `${BASE_URL}movie_details.json`;
 const MOVIE_SUGGESTIONS_URL = `${BASE_URL}movie_suggestions.json`;
 
 export const getMovies = async (limit, rating) => {
-  console.log(LIST_MOVIES_URL);
   const {
     data: {
       data: { movies }
     }
-  } = await axios.get(
-    `https://cors-anywhere.herokuapp.com/${LIST_MOVIES_URL}`,
-    {
-      params: {
-        limit,
-        minimum_rating: rating
-      },
-      headers: {
-        Origin: "https://movieql2.now.sh"
-      }
+  } = await axios.get(LIST_MOVIES_URL, {
+    params: {
+      limit,
+      minimum_rating: rating
+    },
+    headers: {
+      "Content-Type": "application/json"
     }
-  );
+  });
   return movies;
 };
 
