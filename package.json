@@ -16,5 +16,8 @@
   },
   "scripts": {
     "start": "now dev"
+  },
+  "devDependencies": {
+    "now": "^17.0.1"
   }
 }
